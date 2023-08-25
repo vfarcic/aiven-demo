@@ -1,0 +1,17 @@
+apiVersion: aiven.io/v1alpha1
+kind: PostgreSQL
+metadata:
+  name: silly-demo
+spec:
+  authSecretRef:
+    name: aiven-token
+    key: token
+  connInfoSecretTarget:
+    name: pg-connection
+  project: dot-demo
+  cloudName: google-europe-west1
+  plan: hobbyist
+  maintenanceWindowDow: friday
+  maintenanceWindowTime: 23:00:00
+  userConfig:
+    pg_version: '14'
